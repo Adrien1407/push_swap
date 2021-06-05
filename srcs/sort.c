@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_delete_first.c                                  :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 17:32:26 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/03 17:34:55 by adlancel         ###   ########.fr       */
+/*   Created: 2021/06/03 15:29:48 by adlancel          #+#    #+#             */
+/*   Updated: 2021/06/05 14:41:55 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-void	ps_delete_first(t_global *g, t_tab *tab)
+void	quick_sort(t_tab *tab, t_global *g)
 {
 	int i;
-	int j;
-	int *res;
+	int pivot;
+	int tmp;
 
-	i = 1;
-	j = 0;
-	if (!tab)
-		return ;
-	if (!tab->size)
-		return ;
-	tab->size -= 1;
-	if (tab->size == 0)
-		return ;
-	res = malloc (sizeof(int) * tab->size);
-	if (!res)
-		free_everything_and_exit(g);
-	while (i < tab->size + 1)
+	i = 0;
+	pivot = find_pivot(tab);
+	printf ("pvot =%d\n", pivot);
+	while (i < tab->size)
 	{
-		res[j] = tab->tab[i];
+		tmp = tab->tab[i];
+		if (tab->tab[i] <= pivot)
+		{
+			while (tab->tab[0] != tmp)
+			{
+				if (choose_direction(tab, tmp))
+					rra(g);
+				else
+					ra(g);
+			}
+			i = 0;
+			pb(g);
+		}
 		i++;
-		j++;
 	}
-	free(tab->tab);
-	tab->tab = res;
-	return ;
+	if(tab->size == 1)
+		pb(g);
+			print_all(g);
 }

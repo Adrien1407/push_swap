@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_delete_first.c                                  :+:      :+:    :+:   */
+/*   free_and_exit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 17:32:26 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/03 17:34:55 by adlancel         ###   ########.fr       */
+/*   Created: 2021/06/03 12:15:12 by adlancel          #+#    #+#             */
+/*   Updated: 2021/06/03 17:55:39 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-void	ps_delete_first(t_global *g, t_tab *tab)
+void	print_error_and_exit()
 {
-	int i;
-	int j;
-	int *res;
+	write(2, "Error\n", 6);
+	exit(1);
 
-	i = 1;
-	j = 0;
-	if (!tab)
-		return ;
-	if (!tab->size)
-		return ;
-	tab->size -= 1;
-	if (tab->size == 0)
-		return ;
-	res = malloc (sizeof(int) * tab->size);
-	if (!res)
-		free_everything_and_exit(g);
-	while (i < tab->size + 1)
-	{
-		res[j] = tab->tab[i];
-		i++;
-		j++;
-	}
-	free(tab->tab);
-	tab->tab = res;
-	return ;
+}
+
+void	free_everything_and_exit(t_global *g)
+{
+	free_everything(g);
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+void	free_everything(t_global *g)
+{
+	free(g->tab_a->tab);
+	free(g->tab_b->tab);
+	free(g->tab_a);
+	free(g->tab_b);
+	free(g);
 }

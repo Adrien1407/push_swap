@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_delete_first.c                                  :+:      :+:    :+:   */
+/*   fill_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 17:32:26 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/03 17:34:55 by adlancel         ###   ########.fr       */
+/*   Created: 2021/06/03 15:40:10 by adlancel          #+#    #+#             */
+/*   Updated: 2021/06/04 13:48:30 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-void	ps_delete_first(t_global *g, t_tab *tab)
+t_global	*fill_struct(t_global *g, char **av, int ac)
 {
 	int i;
 	int j;
-	int *res;
 
 	i = 1;
 	j = 0;
-	if (!tab)
-		return ;
-	if (!tab->size)
-		return ;
-	tab->size -= 1;
-	if (tab->size == 0)
-		return ;
-	res = malloc (sizeof(int) * tab->size);
-	if (!res)
-		free_everything_and_exit(g);
-	while (i < tab->size + 1)
+	while (i < ac)
 	{
-		res[j] = tab->tab[i];
+		g->tab_a->tab[j] = ps_atoi(av[i],g);
 		i++;
 		j++;
 	}
-	free(tab->tab);
-	tab->tab = res;
-	return ;
+	return(g);
 }

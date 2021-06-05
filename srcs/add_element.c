@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_delete_first.c                                  :+:      :+:    :+:   */
+/*   add_element.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 17:32:26 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/03 17:34:55 by adlancel         ###   ########.fr       */
+/*   Created: 2021/06/03 12:02:05 by adlancel          #+#    #+#             */
+/*   Updated: 2021/06/05 15:04:25 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-void	ps_delete_first(t_global *g, t_tab *tab)
+void	add_element(t_global *g, t_tab *tab, int value)
 {
-	int i;
-	int j;
-	int *res;
+	int	i;
+	int	j;
+	int *ret;
 
 	i = 1;
 	j = 0;
-	if (!tab)
-		return ;
-	if (!tab->size)
-		return ;
-	tab->size -= 1;
-	if (tab->size == 0)
-		return ;
-	res = malloc (sizeof(int) * tab->size);
-	if (!res)
+	tab->size += 1;
+	ret = malloc(sizeof(int) * tab->size);
+	if(!ret)
 		free_everything_and_exit(g);
-	while (i < tab->size + 1)
-	{
-		res[j] = tab->tab[i];
-		i++;
-		j++;
-	}
+	ret[0] = value;
+	while(j < tab->size - 1)
+		ret[i++] = tab->tab[j++];
 	free(tab->tab);
-	tab->tab = res;
-	return ;
+	tab->tab = ret;
 }
+

@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_delete_first.c                                  :+:      :+:    :+:   */
+/*   choose_direction.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 17:32:26 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/03 17:34:55 by adlancel         ###   ########.fr       */
+/*   Created: 2021/06/03 15:34:16 by adlancel          #+#    #+#             */
+/*   Updated: 2021/06/03 15:36:37 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-void	ps_delete_first(t_global *g, t_tab *tab)
+int  choose_direction(t_tab *tab, int wanted_value)
 {
-	int i;
-	int j;
-	int *res;
+  int i;
+  int direction;
 
-	i = 1;
-	j = 0;
-	if (!tab)
-		return ;
-	if (!tab->size)
-		return ;
-	tab->size -= 1;
-	if (tab->size == 0)
-		return ;
-	res = malloc (sizeof(int) * tab->size);
-	if (!res)
-		free_everything_and_exit(g);
-	while (i < tab->size + 1)
-	{
-		res[j] = tab->tab[i];
-		i++;
-		j++;
-	}
-	free(tab->tab);
-	tab->tab = res;
-	return ;
+  i = 0;
+  direction = 1;
+  while (i < tab->size / 2)
+  {
+    if (tab->tab[i] == wanted_value)
+      direction = 0;
+    i++;
+  }
+  return (direction);
 }

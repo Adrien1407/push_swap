@@ -1,42 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_delete_first.c                                  :+:      :+:    :+:   */
+/*   find_pivot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 17:32:26 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/03 17:34:55 by adlancel         ###   ########.fr       */
+/*   Created: 2021/06/03 15:56:32 by adlancel          #+#    #+#             */
+/*   Updated: 2021/06/04 16:09:09 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-void	ps_delete_first(t_global *g, t_tab *tab)
+static	int	is_median(t_tab *tab, int i)
+{
+	int		more;
+	int		k;
+
+	k = 0;
+
+	more = 0;
+
+	while (k < tab->size)
+	{
+		if(tab->tab[k] > tab->tab[i])
+			more++;
+		if(tab->tab[k] < tab->tab[i])
+			more--;
+		k++;
+	}
+	if (more == 0 || more == 1)
+		return (1);
+	return (0);
+}
+int			find_pivot(t_tab *tab)
 {
 	int i;
-	int j;
-	int *res;
+	int pivot;
 
-	i = 1;
-	j = 0;
-	if (!tab)
-		return ;
-	if (!tab->size)
-		return ;
-	tab->size -= 1;
-	if (tab->size == 0)
-		return ;
-	res = malloc (sizeof(int) * tab->size);
-	if (!res)
-		free_everything_and_exit(g);
-	while (i < tab->size + 1)
+	i = 0;
+	pivot = 0;
+
+	while (i < tab->size)
 	{
-		res[j] = tab->tab[i];
+		if (is_median(tab, i))
+			return (tab->tab[i]);
 		i++;
-		j++;
 	}
-	free(tab->tab);
-	tab->tab = res;
-	return ;
+	return (0);
 }
+

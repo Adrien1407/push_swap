@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ps_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrienlancelle <marvin@42.fr>              +#+  +:+       +#+        */
+/*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/17 15:32:11 by adrienlan         #+#    #+#             */
-/*   Updated: 2021/05/17 15:33:15 by adrienlan        ###   ########.fr       */
+/*   Created: 2021/06/03 12:40:29 by adlancel          #+#    #+#             */
+/*   Updated: 2021/06/03 12:41:22 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/push_swap.h"
+#include "../includes/pushswap.h"
 
 static int	ft_count_numbers(int n)
 {
