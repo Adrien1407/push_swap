@@ -6,48 +6,41 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 13:22:45 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/05 15:04:04 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/07 12:27:30 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-static int	find_smallest_number(t_tab* tab)
+static int	find_biggest_number(t_tab* tab)
 {
-	int smallest_number = tab->tab[0];
+	int biggest_number;
 	int i = 1;
+	 biggest_number = tab->tab[0];
 	while (i < tab->size)
 	{
-		if (tab->tab[i] < smallest_number)
-			smallest_number = tab->tab[i];
+		if (tab->tab[i] > biggest_number)
+			biggest_number = tab->tab[i];
 		i++;
 	}
-	return smallest_number;
+	return (biggest_number);
 }
 void	bubble_sort_b(t_global *g)
 {
 	int i;
-	int smallest_number;
+	int biggest_number;
 	while (g->tab_b->size)
 	{
-		smallest_number = find_smallest_number(g->tab_b);
-		if (g->tab_b->size == 3)
+		biggest_number = find_biggest_number(g->tab_b);
+		while (g->tab_b->tab[0] != biggest_number)
 		{
-			sort_three(g, g->tab_b->tab);
-			break ;
-		}
-		while (g->tab_b->tab[0] != smallest_number)
-		{
-			if (choose_direction(g->tab_b, smallest_number))
+			if (choose_direction(g->tab_b, biggest_number))
 				rrb(g);
 			else
 				rb(g);
 		}
-		if (g->tab_b->tab[0] == smallest_number)
-		{
 			pa(g);
 			i = 0;
-		}
 		i++;
 	}
 	while (g->tab_b->size > 0)

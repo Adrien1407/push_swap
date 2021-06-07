@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 12:42:43 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/05 15:18:12 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/07 18:29:36 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "./includes/pushswap.h"
@@ -66,15 +66,10 @@ int	main(int ac, char **av)
 		free_everything(g);
 		return (0);
 	}
-		quick_sort(g->tab_a, g);
-		while (g->tab_b->size)
-			bubble_sort_b(g);
-	//while (g->tab_b->size != 0)
-	//{
-	//	rrb(g);
-//		pa(g);
-//	}
-		print_all(g);
+	if (g->tab_a->size > 50)
+		quick_sort(g);
+	else
+	bubble_sort_a(g);
 	free_everything(g);
 	return(0);
 }
