@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 12:42:43 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/07 18:29:36 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/08 14:09:57 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "./includes/pushswap.h"

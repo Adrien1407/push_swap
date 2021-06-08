@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 13:22:45 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/07 12:31:34 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/08 10:52:45 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,6 @@ void	bubble_sort_a(t_global *g)
 		i = 0;
 		i++;
 	}
+	while(g->tab_b->size > 0)
+		pa(g);
 }

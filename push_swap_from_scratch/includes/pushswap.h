@@ -6,7 +6,7 @@
 /*   By: adrienlancelle <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 14:32:39 by adrienlan         #+#    #+#             */
-/*   Updated: 2021/06/07 18:10:28 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/08 13:58:55 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct	s_tab
 {
 	int *tab;
+	int *pivot;
 	int size;
 }				t_tab;
 

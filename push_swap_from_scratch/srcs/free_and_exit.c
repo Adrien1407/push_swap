@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 12:15:12 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/03 17:55:39 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/08 14:07:55 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	free_everything(t_global *g)
 {
 	free(g->tab_a->tab);
 	free(g->tab_b->tab);
+	free(g->tab_a->pivot);
 	free(g->tab_a);
 	free(g->tab_b);
 	free(g);
