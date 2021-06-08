@@ -6,7 +6,7 @@
 #    By: adrienlancelle <marvin@42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/17 15:30:32 by adrienlan         #+#    #+#              #
-#    Updated: 2021/06/07 14:52:10 by adlancel         ###   ########.fr        #
+#    Updated: 2021/06/08 19:21:27 by adlancel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,11 @@ SRCS_FILES	= \
 			  operators/ra_rb_rr.c \
 			  operators/rra_rrb_rrr.c \
 			  operators/sa_sb_ss.c \
-			  is_not_sorted.c \
 			  quick_sort.c \
 			  sort_three.c \
 			  ps_atoi.c \
+			  push_biggest.c \
+			  find_limits.c \
 			  ps_delete_first.c \
 			  bubble_sort_a.c \
 			  bubble_sort_b.c \

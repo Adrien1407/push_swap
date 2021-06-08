@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 15:40:10 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/08 14:11:03 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/08 17:02:34 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ t_global	*fill_struct(t_global *g, char **av, int ac)
 		j++;
 	}
 	g->tab_a->pivot[0] = find_pivot(g->tab_a);
+//	printf("g->tab_a->pivot[0] = %d\n", g->tab_a->pivot[0]);
 	g->tab_a->pivot[1] = find_half_pivot(g->tab_a, g->tab_a->pivot[0]);
+//	printf("g->tab_a->pivot[1] = %d\n", g->tab_a->pivot[1]);
 	g->tab_a->pivot[2] = find_last_pivot(g->tab_a, g->tab_a->pivot[0]);
+//	printf("g->tab_a->pivot[2] = %d\n", g->tab_a->pivot[2]);
 	return(g);
 }

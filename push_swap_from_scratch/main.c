@@ -6,51 +6,51 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 12:42:43 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/08 14:09:57 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:42:47 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "./includes/pushswap.h"
 void	print_all(t_global *g)
-  {
-  int i;
+{
+	int i;
 
-  i = 0;
-  printf("%s\n", "=====================");
-  printf("%s\n", "[ TABLE A ]");
-  printf("%s\n", "---------------------");
-  if (g->tab_a->size)
-  {
+	i = 0;
+	printf("%s\n", "=====================");
+	printf("%s\n", "[ TABLE A ]");
+	printf("%s\n", "---------------------");
+	if (g->tab_a->size)
+	{
 
-  printf("Size : %d\n", g->tab_a->size);
-  printf("%s\n", "---------------------");
-  while (i < g->tab_a->size)
-  {
-  printf("%d\n", g->tab_a->tab[i]);
-  i++;
-  }
-  }
-  else
-  printf("%s\n", "TABLE A EMPTY");
-  printf("%s\n", "=====================");
+		printf("Size : %d\n", g->tab_a->size);
+		printf("%s\n", "---------------------");
+		while (i < g->tab_a->size)
+		{
+			printf("%d\n", g->tab_a->tab[i]);
+			i++;
+		}
+	}
+	else
+		printf("%s\n", "TABLE A EMPTY");
+	printf("%s\n", "=====================");
 
-  i = 0;
-  printf("%s\n", "=====================");
-  printf("%s\n", "[ TABLE B ]");
-  printf("%s\n", "---------------------");
-  if (g->tab_b->size)
-  {
-  printf("Size : %d\n", g->tab_b->size);
-  printf("%s\n", "---------------------");
-  while (i < g->tab_b->size)
-  {
-  printf("%d\n", g->tab_b->tab[i]);
-  i++;
-  }
-  }
-  else
-  printf("%s\n", "TABLE B EMPTY");
-  printf("%s\n", "=====================");
-  }
+	i = 0;
+	printf("%s\n", "=====================");
+	printf("%s\n", "[ TABLE B ]");
+	printf("%s\n", "---------------------");
+	if (g->tab_b->size)
+	{
+		printf("Size : %d\n", g->tab_b->size);
+		printf("%s\n", "---------------------");
+		while (i < g->tab_b->size)
+		{
+			printf("%d\n", g->tab_b->tab[i]);
+			i++;
+		}
+	}
+	else
+		printf("%s\n", "TABLE B EMPTY");
+	printf("%s\n", "=====================");
+}
 
 int	main(int ac, char **av)
 {
@@ -69,7 +69,8 @@ int	main(int ac, char **av)
 	if (g->tab_a->size > 50)
 		quick_sort(g);
 	else
-	bubble_sort_a(g);
+		bubble_sort_a(g);
+print_all(g);
 	free_everything(g);
 	return(0);
 }

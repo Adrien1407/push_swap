@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 15:29:48 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/08 14:56:58 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:41:11 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 static void	quick_sort_last_quarter(t_global *g)
 {
-	int	size;
 
-	size = ((g->tab_a->size * 3) / 4);
-	while (g->tab_a->size > size)
+	int	tmp;
+	tmp = 0.25 * g->tab_a->size;
+	while (tmp)
 	{
-		if (g->tab_a->tab[0] > g->tab_a->pivot[2])
+		if (g->tab_a->tab[0] >= g->tab_a->pivot[2])
+		{
 			pb(g);
+			tmp--;
+		}
 		else
 			ra(g);
 	}
@@ -28,13 +31,17 @@ static void	quick_sort_last_quarter(t_global *g)
 
 static void	quick_sort_first_quarter(t_global *g)
 {
-	int	size;
+	int	tmp;
 
-	size = (((g->tab_a->size * 3) / 4) + 1);
-	while (g->tab_a->size > size)
+	tmp = 0.25 * g->tab_a->size;
+
+	while (tmp)
 	{
-		if (g->tab_a->tab[0] < g->tab_a->pivot[1])
+		if (g->tab_a->tab[0] <= g->tab_a->pivot[1])
+		{
 			pb(g);
+			tmp--;
+		}
 		else
 			ra(g);
 	}
@@ -42,13 +49,17 @@ static void	quick_sort_first_quarter(t_global *g)
 
 static void	quick_sort_middle(t_global *g, int min_value, int max_value)
 {
-	int	size;
+	int	tmp;
 
-	size = (((g->tab_a->size * 3) / 4 ) - 1);
-	while (g->tab_a->size > size)
+	tmp = 0.25 * g->tab_a->size;
+
+	while (tmp)
 	{	
-		if (g->tab_a->tab[0] >= min_value && g->tab_a->tab[0] <= max_value)
+		if (g->tab_a->tab[0] > min_value && g->tab_a->tab[0] <= max_value)
+		{
 			pb(g);
+			tmp--;
+		}
 		else
 			ra(g);
 	}
@@ -66,9 +77,7 @@ static void	quick_sort_bis(t_global *g, int min_value, int max_value)
 
 void	quick_sort(t_global *g)
 {
-	int	t;
-
-	t = g->tab_a->size;
+	push_biggest(g);
 	quick_sort_bis(g, g->tab_a->pivot[2], 0);
 	bubble_sort_b(g);
 	quick_sort_bis(g, g->tab_a->pivot[0], g->tab_a->pivot[2]);

@@ -6,25 +6,12 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 13:22:45 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/08 10:49:17 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:39:25 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-static int	find_biggest_number(t_tab* tab)
-{
-	int biggest_number;
-	int i = 1;
-	 biggest_number = tab->tab[0];
-	while (i < tab->size)
-	{
-		if (tab->tab[i] > biggest_number)
-			biggest_number = tab->tab[i];
-		i++;
-	}
-	return (biggest_number);
-}
 void	bubble_sort_b(t_global *g)
 {
 	int i;

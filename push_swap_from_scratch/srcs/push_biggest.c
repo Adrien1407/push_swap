@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_not_sorted.c                                    :+:      :+:    :+:   */
+/*   push_biggest.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 14:00:48 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/04 14:01:29 by adlancel         ###   ########.fr       */
+/*   Created: 2021/06/08 18:31:31 by adlancel          #+#    #+#             */
+/*   Updated: 2021/06/08 19:22:09 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-int	is_not_sorted(t_global *g)
+void	push_biggest(t_global *g)
 {
 	int i;
+	int biggest;
 
+	biggest = find_biggest_number(g->tab_a);
 	i = 0;
-	if (g->tab_b->size != 0)
-		return (1);
-	while (i < g->tab_a->size)
+	while (g->tab_a->size % 4 != 0)
 	{
-		if (g->tab_a->tab[i] > g->tab_a->tab[i - 1])
-			return (1);
-		i++;
+		while (g->tab_a->tab[0]!= biggest)
+		{
+			if (choose_direction(g->tab_a, biggest))
+				rra(g);
+			else
+				ra(g);
+		}
+		pb(g);
 	}
-	return (0);
 }
