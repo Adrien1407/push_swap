@@ -6,7 +6,7 @@
 /*   By: adrienlancelle <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 14:32:39 by adrienlan         #+#    #+#             */
-/*   Updated: 2021/06/08 19:21:16 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/09 17:57:10 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int				is_not_sorted(t_global *g);
 int				ps_atoi(const char *str, t_global *g);
 int				find_smallest_number(t_tab *tab);
 int				find_biggest_number(t_tab* tab);
-void			push_biggest(t_global *g);
+int				push_biggest(t_global *g);
 void			quick_sort(t_global *g);
 void			bubble_sort_a(t_global *g);
 void			bubble_sort_b(t_global *g);

@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 12:42:43 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/08 19:42:47 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/09 19:22:46 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "./includes/pushswap.h"
@@ -50,6 +50,8 @@ void	print_all(t_global *g)
 	else
 		printf("%s\n", "TABLE B EMPTY");
 	printf("%s\n", "=====================");
+
+printf ("pivots = 0 = %d,1 =%d, 2 = %d", g->tab_a->pivot[0], g->tab_a->pivot[1], g->tab_a->pivot[2]);
 }
 
 int	main(int ac, char **av)
@@ -66,11 +68,7 @@ int	main(int ac, char **av)
 		free_everything(g);
 		return (0);
 	}
-	if (g->tab_a->size > 50)
 		quick_sort(g);
-	else
-		bubble_sort_a(g);
-print_all(g);
 	free_everything(g);
 	return(0);
 }
