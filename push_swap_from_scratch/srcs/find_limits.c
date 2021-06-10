@@ -6,16 +6,19 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 19:07:16 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/09 18:40:26 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/10 10:20:05 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-int	find_smallest_number(t_tab* tab)
+int	find_smallest_number(t_tab *tab)
 {
-	int smallest_number = tab->tab[0];
-	int i = 1;
+	int	smallest_number;
+	int	i;
+
+	i = 1;
+	smallest_number = tab->tab[0];
 	while (i < tab->size)
 	{
 		if (tab->tab[i] < smallest_number)
@@ -25,11 +28,13 @@ int	find_smallest_number(t_tab* tab)
 	return (smallest_number);
 }
 
-int	find_biggest_number(t_tab* tab)
+int	find_biggest_number(t_tab *tab)
 {
-	int biggest_number;
-	int i = 1;
-	 biggest_number = tab->tab[0];
+	int	biggest_number;
+	int	i;
+
+	i = 1;
+	biggest_number = tab->tab[0];
 	while (i < tab->size)
 	{
 		if (tab->tab[i] > biggest_number)

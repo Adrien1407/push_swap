@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 12:40:29 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/03 12:41:22 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/10 09:42:15 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_count_numbers(int n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (n)
@@ -49,7 +49,7 @@ static void	convert(const char *str, int *atoi, int *i, int *number_count)
 	}
 }
 
-int			ps_atoi(const char *str, t_global *g)
+int	ps_atoi(const char *str, t_global *g)
 {
 	int	atoi;
 	int	sign;

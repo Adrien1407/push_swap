@@ -6,17 +6,16 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 12:15:12 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/08 14:07:55 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/10 10:30:52 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-void	print_error_and_exit()
+void	print_error_and_exit(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
-
 }
 
 void	free_everything_and_exit(t_global *g)

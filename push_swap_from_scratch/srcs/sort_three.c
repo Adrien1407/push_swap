@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 13:49:10 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/03 13:50:33 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/10 10:28:04 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	sort_three(t_global *g, int *tab)
 {
 	tab = g->tab_a->tab;
-
 	if (tab[0] > tab[1] && tab[1] < tab[2])
 		sa(g);
 	if (tab[0] > tab[1] && tab[1] > tab[2])

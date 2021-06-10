@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 13:22:45 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/09 19:31:06 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/10 09:51:30 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	bubble_sort_b(t_global *g)
 {
-	int i;
-	int biggest_number;
+	int	i;
+	int	biggest_number;
+
 	while (g->tab_b->size)
 	{
 		biggest_number = find_biggest_number(g->tab_b);
@@ -26,8 +27,8 @@ void	bubble_sort_b(t_global *g)
 			else
 				rb(g);
 		}
-			pa(g);
-			i = 0;
+		pa(g);
+		i = 0;
 		i++;
 	}
 	while (g->tab_b->size > 0)

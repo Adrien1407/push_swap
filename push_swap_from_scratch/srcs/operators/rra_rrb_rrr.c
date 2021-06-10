@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:54:51 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/03 12:01:22 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/10 09:49:09 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 static void	sub_rr(t_tab *tab)
 {
-	int size;
-	int tmp;
+	int	size;
+	int	tmp;
 
 	if (tab)
+	{
 		if (tab->size)
+		{
 			if (tab->size > 1)
 			{
 				size = tab->size;
@@ -30,24 +32,26 @@ static void	sub_rr(t_tab *tab)
 				}
 				tab->tab[0] = tmp;
 			}
+		}
+	}
 	return ;
 }
 
-void		rra(t_global *g)
+void	rra(t_global *g)
 {
 	sub_rr(g->tab_a);
 	write(1, "rra\n", 4);
 	return ;
 }
 
-void		rrb(t_global *g)
+void	rrb(t_global *g)
 {
 	sub_rr(g->tab_b);
 	write(1, "rrb\n", 4);
 	return ;
 }
 
-void		rrr(t_global *g)
+void	rrr(t_global *g)
 {
 	sub_rr(g->tab_a);
 	sub_rr(g->tab_b);
