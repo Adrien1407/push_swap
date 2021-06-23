@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 13:23:34 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/10 09:39:08 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:33:08 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ t_global	*init_tab(t_global *g, int ac)
 		free(g);
 		print_error_and_exit();
 	}
-	g->tab_a->pivot = malloc(sizeof(int) * 3);
-	while (i < 3)
+	g->tab_a->pivot = malloc(sizeof(int) * 7);
+	while (i < 7)
 		g->tab_a->pivot[i++] = 0;
 	i = 0;
 	while (i < ac - 1)
