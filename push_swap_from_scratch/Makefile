@@ -6,7 +6,7 @@
 #    By: adrienlancelle <marvin@42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/17 15:30:32 by adrienlan         #+#    #+#              #
-#    Updated: 2021/06/10 10:26:27 by adlancel         ###   ########.fr        #
+#    Updated: 2021/06/24 20:29:48 by adlancel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,19 @@ SRCS_FILES	= \
 			  choose_direction.c \
 			  free_and_exit.c \
 			  add_element.c \
+			  check_duplicates.c \
 			  operators/pa_pb.c \
 			  operators/ra_rb_rr.c \
 			  operators/rra_rrb_rrr.c \
 			  operators/sa_sb_ss.c \
 			  quick_sort.c \
+			  quick_sort_bis.c \
 			  sort_three.c \
 			  ps_atoi.c \
+			  not_sorted.c \
 			  medians.c \
 			  find_limits.c \
 			  ps_delete_first.c \
-			  bubble_sort_a.c \
 			  bubble_sort_b.c \
 
 OBJS		= ${SRCS:.c=.o}

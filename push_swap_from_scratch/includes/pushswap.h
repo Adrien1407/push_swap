@@ -6,7 +6,7 @@
 /*   By: adrienlancelle <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 14:32:39 by adrienlan         #+#    #+#             */
-/*   Updated: 2021/06/23 12:32:39 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/24 20:29:07 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,20 @@ typedef struct s_global
 t_global		*init_struct(t_global *g, int ac);
 t_global		*fill_struct(t_global *g, char **av, int ac);
 int				find_pivot(t_tab *tab, int min, int max);
-int				is_median(t_tab *tab, int min, int max,  int index);
+int				is_median(t_tab *tab, int min, int max, int index);
 int				choose_direction(t_tab *tab, int wanted_value);
 int				is_not_sorted(t_global *g);
 int				ps_atoi(const char *str, t_global *g);
 int				find_smallest_number(t_tab *tab);
 int				find_biggest_number(t_tab *tab);
 int				push_biggest(t_global *g);
+int				not_sorted(t_global *g);
+void			check_duplicates(t_global *g);
 void			quick_sort_small(t_global *g);
 void			quick_sort_big(t_global *g);
+void			quick_sort_bis(t_global *g, int max, int min);
+void			quick_sort_ter(t_global *g, int min);
+void			quick_sort_quater(t_global *g, int min);
 void			bubble_sort_a(t_global *g);
 void			bubble_sort_b(t_global *g);
 void			sort_three(t_global *g, int *tab);

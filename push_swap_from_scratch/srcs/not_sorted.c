@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_everything.c                                  :+:      :+:    :+:   */
+/*   not_sorted.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrienlancelle <marvin@42.fr>              +#+  +:+       +#+        */
+/*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/17 15:27:39 by adrienlan         #+#    #+#             */
-/*   Updated: 2021/05/17 15:27:56 by adrienlan        ###   ########.fr       */
+/*   Created: 2021/06/24 20:19:00 by adlancel          #+#    #+#             */
+/*   Updated: 2021/06/24 20:19:20 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../Includes/push_swap.h"
+#include "../includes/pushswap.h"
 
-void	free_everything(t_global *g)
+int	not_sorted(t_global *g)
 {
-	free(g->a->data);
-	free(g->b->data);
-	free(g->a->size);
-	free(g->b->size);
-	free(g->a);
-	free(g->b);
-	free(g);
+	int	i;
+
+	i = 1;
+	while (i < g->tab_a->size)
+	{
+		if (g->tab_a->tab[i - 1] > g->tab_a->tab[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
+

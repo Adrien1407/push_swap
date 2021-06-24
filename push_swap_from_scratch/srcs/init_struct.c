@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 13:23:34 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/23 13:33:08 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/24 17:36:41 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ t_global	*init_tab(t_global *g, int ac)
 
 t_global	*init_struct(t_global *g, int ac)
 {
-	int	i;
-
-	i = 0;
 	g = malloc(sizeof(t_global));
 	if (!g)
 		print_error_and_exit();

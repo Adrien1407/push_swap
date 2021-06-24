@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 13:22:45 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/23 17:58:35 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/24 18:20:31 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	bubble_sort_a(t_global *g)
 {
-	int	i;
-	int	smallest_number;
-
+	int i;
+	int smallest_number;
 	while (g->tab_a->size)
 	{
 		smallest_number = find_smallest_number(g->tab_a);
@@ -36,6 +35,6 @@ void	bubble_sort_a(t_global *g)
 		i = 0;
 		i++;
 	}
-	while (g->tab_b->size > 0)
+	while (g->tab_b->size)
 		pa(g);
 }

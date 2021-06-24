@@ -6,7 +6,7 @@
 /*   By: adlancel <adlancel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:52:19 by adlancel          #+#    #+#             */
-/*   Updated: 2021/06/23 18:26:09 by adlancel         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:49:10 by adlancel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,23 @@
 static void	sub_r(t_tab *tab)
 {
 	int	i;
-	int	size;
 	int	tmp;
 
 	i = 0;
 	if (tab)
 	{
-		if (tab->size)
+		if (tab->size > 1)
 		{
-			if (tab->size > 1)
+			tmp = tab->tab[0];
+			while (i < tab->size - 1)
 			{
-				size = tab->size;
-				tmp = tab->tab[0];
-				while (i < size)
-				{
-					tab->tab[i] = tab->tab[i + 1];
-					i++;
-				}
-				tab->tab[size - 1] = tmp;
+				tab->tab[i] = tab->tab[i + 1];
+				i++;
 			}
+			tab->tab[tab->size - 1] = tmp;
 		}
 	}
+	return ;
 }
 
 void	ra(t_global *g)
